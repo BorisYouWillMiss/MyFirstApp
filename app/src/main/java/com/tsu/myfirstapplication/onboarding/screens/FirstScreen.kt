@@ -1,14 +1,15 @@
 package com.tsu.myfirstapplication.onboarding.screens
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
 import androidx.viewpager2.widget.ViewPager2
 import com.tsu.myfirstapplication.R
+import com.tsu.myfirstapplication.ViewPagerActivity
 import com.tsu.myfirstapplication.databinding.FragmentFirstScreenBinding
 
 class FirstScreen : Fragment() {
@@ -27,6 +28,10 @@ class FirstScreen : Fragment() {
         binding.next1.setOnClickListener {
             Log.d("FirstFragment", "test button")
             viewPager?.setCurrentItem(1, true)
+        }
+
+        binding.skip1.setOnClickListener {
+            (activity as ViewPagerActivity).goToSignup()
         }
 
         return binding.root

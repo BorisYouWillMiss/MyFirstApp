@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.viewpager2.widget.ViewPager2
 import com.tsu.myfirstapplication.R
+import com.tsu.myfirstapplication.ViewPagerActivity
 import com.tsu.myfirstapplication.databinding.FragmentThirdScreenBinding
 
 class ThirdScreen : Fragment() {
@@ -24,7 +25,11 @@ class ThirdScreen : Fragment() {
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
 
         binding.next3.setOnClickListener{
-            viewPager?.setCurrentItem(2, true)
+            (activity as ViewPagerActivity).goToSignup()
+        }
+
+        binding.skip3.setOnClickListener {
+            (activity as ViewPagerActivity).goToSignup()
         }
 
         return binding.root
