@@ -6,8 +6,4 @@ import androidx.lifecycle.ViewModel
 
 class VideoViewModel : ViewModel() {
 
-    private val _text = MutableLiveData<String>().apply {
-        value = "This is video Fragment"
-    }
-    val text: LiveData<String> = _text
 }

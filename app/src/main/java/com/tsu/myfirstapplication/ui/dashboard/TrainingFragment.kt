@@ -22,16 +22,12 @@ class TrainingFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val dashboardViewModel =
-            ViewModelProvider(this).get(TrainingViewModel::class.java)
 
         _binding = FragmentTrainingBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textTraining
-        dashboardViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 

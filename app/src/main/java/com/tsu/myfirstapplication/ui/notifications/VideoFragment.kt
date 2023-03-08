@@ -22,16 +22,12 @@ class VideoFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        val notificationsViewModel =
-            ViewModelProvider(this).get(VideoViewModel::class.java)
 
         _binding = FragmentVideoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
         val textView: TextView = binding.textVideo
-        notificationsViewModel.text.observe(viewLifecycleOwner) {
-            textView.text = it
-        }
+
         return root
     }
 
