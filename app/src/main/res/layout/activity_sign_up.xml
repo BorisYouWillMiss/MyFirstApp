@@ -6,7 +6,110 @@
     android:layout_height="match_parent"
     android:backgroundTint="#373737"
     android:foregroundTint="#4E4E4E"
+    android:outlineProvider="bounds"
     tools:context=".SignUp">
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="113dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="675dp"
+        android:backgroundTint="#00979797"
+        android:elevation="0dp"
+        android:fontFamily="@font/rubik_medium"
+        android:foregroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:outlineProvider="none"
+        android:shadowColor="#00C14444"
+        android:text="Log in"
+        android:textAllCaps="false"
+        android:textColor="#A3A3A3"
+        app:cornerRadius="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/boardButton2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Sign up"
+        android:textAllCaps="false"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textInputLayout"
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="540dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#5A5A5A"
+        android:foregroundTint="#575757"
+        app:boxBackgroundColor="#DFDFDF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="48sp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="Password"
+            android:outlineProvider="none"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="420dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#5A5A5A"
+        android:foregroundTint="#575757"
+        app:boxBackgroundColor="#DFDFDF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="48sp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="E-mail"
+            android:outlineProvider="none"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -60,5 +163,35 @@
         app:iconTint="#575757"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="0dp"
+        android:layout_height="55dp"
+        android:layout_marginStart="35dp"
+        android:layout_marginTop="300dp"
+        android:layout_marginEnd="35dp"
+        android:layout_marginBottom="80dp"
+        android:backgroundTint="#5A5A5A"
+        android:foregroundTint="#575757"
+        app:boxBackgroundColor="#DFDFDF"
+        app:boxBackgroundMode="outline"
+        app:boxCornerRadiusBottomEnd="12dp"
+        app:boxCornerRadiusBottomStart="12dp"
+        app:boxCornerRadiusTopEnd="12dp"
+        app:boxCornerRadiusTopStart="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:height="48sp"
+            android:backgroundTint="#00FFFFFF"
+            android:hint="Name"
+            android:outlineProvider="none"
+            android:textSize="14sp" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
