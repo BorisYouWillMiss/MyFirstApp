@@ -6,7 +6,6 @@ import android.os.Bundle
 import android.util.Log
 import com.tsu.myfirstapplication.databinding.ActivitySignUpBinding
 import androidx.appcompat.app.AlertDialog
-
 class SignUp : AppCompatActivity() {
     private var _binding: ActivitySignUpBinding? = null
     private val binding get() = _binding!!
@@ -27,7 +26,7 @@ class SignUp : AppCompatActivity() {
             if (binding.editEmailField.text.toString().isNotEmpty() &&
                     binding.editNameField.text.toString().isNotEmpty() &&
                     binding.editPasswordField.text.toString().isNotEmpty()){
-                val intent = Intent(this@SignUp, ViewPagerActivity::class.java)
+                val intent = Intent(this@SignUp, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
