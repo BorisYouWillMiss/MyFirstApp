@@ -12,10 +12,13 @@ class ViewPagerAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter
 
     override fun createFragment(position: Int): Fragment{
         return when(position){
-            0 -> {FirstScreen()}
+            0 -> {FirstScreen()
+            }
             1 -> {SecondScreen()}
-            2 -> {ThirdScreen()}
-            else -> {FirstScreen()}
+            2 -> {ThirdScreen()
+            }
+            else -> {FirstScreen()
+            }
         }
     }
 
