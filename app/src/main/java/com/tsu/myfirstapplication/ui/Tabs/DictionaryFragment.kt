@@ -1,4 +1,4 @@
-package com.tsu.myfirstapplication.ui.notifications
+package com.tsu.myfirstapplication.ui.Tabs
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.tsu.myfirstapplication.databinding.FragmentVideoBinding
+import com.tsu.myfirstapplication.databinding.FragmentDictionaryBinding
 
-class VideoFragment : Fragment() {
+class DictionaryFragment : Fragment() {
 
-    private var _binding: FragmentVideoBinding? = null
+    private var _binding: FragmentDictionaryBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -23,10 +23,10 @@ class VideoFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
 
-        _binding = FragmentVideoBinding.inflate(inflater, container, false)
+        _binding = FragmentDictionaryBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textVideo
+        val textView: TextView = binding.textDictionary
 
         return root
     }

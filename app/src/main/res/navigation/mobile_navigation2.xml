@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/navigation_dictionary"
-        android:name="com.tsu.myfirstapplication.ui.home.DictionaryFragment"
+        android:name="com.tsu.myfirstapplication.ui.Tabs.DictionaryFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_dictionary" />
 
     <fragment
         android:id="@+id/navigation_training"
-        android:name="com.tsu.myfirstapplication.ui.dashboard.TrainingFragment"
+        android:name="com.tsu.myfirstapplication.ui.Tabs.TrainingFragment"
         android:label="@string/title_dashboard"
         tools:layout="@layout/fragment_training" />
 
     <fragment
         android:id="@+id/navigation_video"
-        android:name="com.tsu.myfirstapplication.ui.notifications.VideoFragment"
+        android:name="com.tsu.myfirstapplication.ui.Tabs.VideoFragment"
         android:label="@string/title_notifications"
         tools:layout="@layout/fragment_video" />
 </navigation>
