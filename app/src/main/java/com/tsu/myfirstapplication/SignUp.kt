@@ -4,8 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
-import android.widget.Button
 import com.tsu.myfirstapplication.databinding.ActivitySignUpBinding
+import androidx.appcompat.app.AlertDialog
 
 class SignUp : AppCompatActivity() {
     private var _binding: ActivitySignUpBinding? = null
@@ -17,11 +17,27 @@ class SignUp : AppCompatActivity() {
         _binding = ActivitySignUpBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        findViewById<Button>(R.id.buttonBack).setOnClickListener{
+        binding.buttonBack.setOnClickListener{
             Log.d("Tagtag", "Button pressed")
             val intent = Intent(this@SignUp, ViewPagerActivity::class.java)
             startActivity(intent)
         }
+
+        binding.btnSignUp.setOnClickListener{
+            if (binding.editEmailField.text.toString().isNotEmpty() &&
+                    binding.editNameField.text.toString().isNotEmpty() &&
+                    binding.editPasswordField.text.toString().isNotEmpty()){
+                val intent = Intent(this@SignUp, ViewPagerActivity::class.java)
+                startActivity(intent)
+                finish()
+            } else {
+                val dialogBuilder = AlertDialog.Builder(this)
+                dialogBuilder.setTitle("Signing up failed")
+                dialogBuilder.setMessage("All fields must be filled")
+                dialogBuilder.show()
+            }
+        }
+
 
     }
 }
