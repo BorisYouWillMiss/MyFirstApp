@@ -3,21 +3,31 @@ package com.tsu.myfirstapplication
 
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
+import android.util.Log
+import android.widget.Button
 import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.graphics.drawable.toDrawable
 import androidx.viewpager2.widget.ViewPager2
 import com.tsu.myfirstapplication.onboarding.ViewPagerAdapter
-
+import com.tsu.myfirstapplication.databinding.FragmentViewPagerBinding
 
 class ViewPagerActivity : AppCompatActivity() {
+
+    private var _binding: FragmentViewPagerBinding? = null
+    private val binding get() = _binding!!
 
     private lateinit var viewPager2: ViewPager2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.fragment_view_pager)
+
+        _binding = FragmentViewPagerBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        findViewById<Button>(R.id.buttonskip).setOnClickListener {
+            Log.d("TestTest", "skip clicked")
+            goToSignup()
+        }
 
         val viewPager = findViewById<ViewPager2>(R.id.viewPager)
         viewPager.adapter = ViewPagerAdapter(this)
@@ -26,8 +36,36 @@ class ViewPagerActivity : AppCompatActivity() {
             override fun onPageSelected(position: Int) {
                 super.onPageSelected(position)
                 curPageDotSet(position)
+                boardButtonSet(position)
             }
         })
+
+
+    }
+
+    fun boardButtonSet(position: Int){
+        val viewPager = findViewById<ViewPager2>(R.id.viewPager)
+        val boardButton = findViewById<Button>(R.id.boardButton)
+        when(position){
+            0->{
+                boardButton.setText("Next")
+                boardButton.setOnClickListener {
+                    viewPager?.setCurrentItem(1, true)
+                }
+            }
+            1->{
+                boardButton.setText("Next")
+                boardButton.setOnClickListener {
+                    viewPager?.setCurrentItem(2, true)
+                }
+            }
+            2->{
+                boardButton.setText("Let's Start")
+                boardButton.setOnClickListener {
+                    goToSignup()
+                }
+            }
+        }
     }
 
     fun curPageDotSet(position: Int){

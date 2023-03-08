@@ -6,6 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".ViewPagerActivity">
 
+    <Button
+        android:id="@+id/buttonskip"
+        style="@style/Widget.MaterialComponents.Button"
+        android:layout_width="70dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:layout_marginEnd="16dp"
+        android:backgroundTint="#00979797"
+        android:elevation="0dp"
+        android:foregroundTint="#00FFFFFF"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:outlineProvider="none"
+        android:shadowColor="#00C14444"
+        android:text="Skip"
+        android:textAllCaps="false"
+        android:textColor="#A3A3A3"
+        app:cornerRadius="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/boardButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="50dp"
+        android:backgroundTint="@android:color/holo_orange_dark"
+        android:text="Next"
+        app:cornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="@+id/viewPager"
+        app:layout_constraintEnd_toEndOf="@+id/viewPager"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <ImageView
         android:id="@+id/pager1"
         android:layout_width="16dp"

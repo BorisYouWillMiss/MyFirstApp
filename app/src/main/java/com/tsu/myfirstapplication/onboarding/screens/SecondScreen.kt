@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 import com.tsu.myfirstapplication.R
-import com.tsu.myfirstapplication.ViewPagerActivity
 import com.tsu.myfirstapplication.databinding.FragmentSecondScreenBinding
 
 class SecondScreen : Fragment() {
@@ -22,14 +21,6 @@ class SecondScreen : Fragment() {
         _binding = FragmentSecondScreenBinding.inflate(inflater, container, false)
 
         val viewPager = activity?.findViewById<ViewPager2>(R.id.viewPager)
-
-        binding.next2.setOnClickListener{
-            viewPager?.setCurrentItem(2, true)
-        }
-
-        binding.skip2.setOnClickListener {
-            (activity as ViewPagerActivity).goToSignup()
-        }
 
         return binding.root
     }
