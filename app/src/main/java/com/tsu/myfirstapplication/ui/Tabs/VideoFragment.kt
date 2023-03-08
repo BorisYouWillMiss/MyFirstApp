@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.tsu.myfirstapplication.databinding.FragmentVideoBinding
 
 class VideoFragment : Fragment() {
@@ -15,7 +14,6 @@ class VideoFragment : Fragment() {
 
     // This property is only valid between onCreateView and
     // onDestroyView.
-    // https://learnenglish.britishcouncil.org/general-english/video-zone
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -27,7 +25,7 @@ class VideoFragment : Fragment() {
         _binding = FragmentVideoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val textView: TextView = binding.textVideo
+        binding.webview.loadUrl("https://learnenglish.britishcouncil.org/general-english/video-zone")
 
         return root
     }
