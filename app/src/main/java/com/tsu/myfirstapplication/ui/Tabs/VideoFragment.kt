@@ -10,6 +10,8 @@ import com.tsu.myfirstapplication.databinding.FragmentVideoBinding
 import android.webkit.WebView
 import android.webkit.WebResourceRequest
 import android.net.Uri
+import androidx.activity.OnBackPressedCallback
+import com.tsu.myfirstapplication.ViewPagerActivity
 
 class VideoFragment : Fragment() {
 
@@ -41,9 +43,23 @@ class VideoFragment : Fragment() {
 
         return root
     }
-
-    override fun onDestroyView() {
+        override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        activity?.onBackPressedDispatcher?.addCallback(this, object : OnBackPressedCallback(true) {
+            override fun handleOnBackPressed() {
+                if (binding.webview.canGoBack() && Uri.parse(binding.webview.url .toString()).toString().contains("https://learnenglish.britishcouncil.org/general-english/video-zone", ignoreCase = true) && Uri.parse(binding.webview.url .toString()).toString().length > 68) {
+
+                    binding.webview.goBack()
+                } else {
+                    isEnabled = false
+                    activity?.onBackPressed()
+                }
+            }
+        })
     }
 }
