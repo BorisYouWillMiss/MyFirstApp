@@ -4,9 +4,12 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.tsu.myfirstapplication.databinding.FragmentVideoBinding
+import android.webkit.WebView
+import android.webkit.WebResourceRequest
+import android.net.Uri
 
 class VideoFragment : Fragment() {
 
@@ -16,6 +19,14 @@ class VideoFragment : Fragment() {
     // onDestroyView.
     private val binding get() = _binding!!
 
+    private class ClientWebView : WebViewClient() {
+        override fun shouldOverrideUrlLoading(view: WebView?, request: WebResourceRequest?): Boolean {
+            if(Uri.parse(request?.url.toString()).toString().contains("https://learnenglish.britishcouncil.org/general-english/video-zone", ignoreCase = true)) {
+                return super.shouldOverrideUrlLoading(view, request)
+            }
+            return true
+        }
+    }
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -25,6 +36,7 @@ class VideoFragment : Fragment() {
         _binding = FragmentVideoBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
+        binding.webview.webViewClient = ClientWebView()
         binding.webview.loadUrl("https://learnenglish.britishcouncil.org/general-english/video-zone")
 
         return root
