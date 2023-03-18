@@ -1,15 +1,14 @@
 package com.tsu.myfirstapplication
 
-import android.content.Context
-import android.util.Log
+import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.tsu.myfirstapplication.models.MeaningModel
 import com.tsu.myfirstapplication.models.MeaningCardModel
+import com.tsu.myfirstapplication.models.PhoneticsModel
 
 class DataAdapter constructor() : RecyclerView.Adapter<DataAdapter.DataAdapterViewHolder>() {
 
@@ -26,7 +25,6 @@ class DataAdapter constructor() : RecyclerView.Adapter<DataAdapter.DataAdapterVi
             }
         }
     }
-
     fun setData(data: List<MeaningCardModel>){
         adapterData.apply {
             clear()
@@ -42,7 +40,6 @@ class DataAdapter constructor() : RecyclerView.Adapter<DataAdapter.DataAdapterVi
 
         return DataAdapterViewHolder(view)
     }
-
     override fun onBindViewHolder(holder: DataAdapterViewHolder, position: Int) {
         holder.bindCardInfo(adapterData[position])
     }

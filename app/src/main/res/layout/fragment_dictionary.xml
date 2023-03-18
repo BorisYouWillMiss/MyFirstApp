@@ -51,7 +51,7 @@
                 android:layout_marginStart="12dp"
                 android:layout_marginTop="48dp"
                 android:fontFamily="@font/rubik"
-                android:text="vna"
+                android:text="noun"
                 android:textColor="#000000"
                 android:textSize="20sp"
                 app:layout_constraintStart_toEndOf="@+id/labelpartofspeech"

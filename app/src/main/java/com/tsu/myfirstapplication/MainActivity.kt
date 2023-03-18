@@ -33,7 +33,7 @@ class MainActivity : AppCompatActivity() {
             )
         )
 
-        val mediaPlayer = MediaPlayer()
+        mediaPlayer = MediaPlayer()
 
         navView.setupWithNavController(navController)
     }

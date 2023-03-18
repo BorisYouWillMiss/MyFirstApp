@@ -98,10 +98,11 @@ class DictionaryFragment : Fragment() {
                     var example: Spannable = SpannableString("t")
 
                     if(!data[0].meanings[0].definitions[k].example.isNullOrEmpty()){
-                        val spannable: Spannable = SpannableString("Example: " + data[0].meanings[0].definitions[0].example)
+                        val spannable: Spannable = SpannableString("Example: " + data[0].meanings[0].definitions[k].example)
                         spannable.setSpan(ForegroundColorSpan(Color.parseColor("#65AAEA")), 0, 9, Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                         example = spannable
                     }
+
                     meanings.add(MeaningCardModel(def,
                         example))
                 }
@@ -110,13 +111,14 @@ class DictionaryFragment : Fragment() {
             else {
                 activity?.runOnUiThread(java.lang.Runnable {
                     val dialogBuilder = AlertDialog.Builder(activity as MainActivity)
-                    dialogBuilder.setTitle("Error 404")
-                    dialogBuilder.setMessage("Word not found")
+                    dialogBuilder.setTitle("Word not found")
+                    dialogBuilder.setMessage("No such word in the vocabulary")
                     dialogBuilder.show()
                 })
             }
             activity?.runOnUiThread(java.lang.Runnable {
                 setCardValues(word, phonetic, audio, vna, meanings)
+                soundButtonSet(audio)
             })
         }
 
@@ -128,6 +130,12 @@ class DictionaryFragment : Fragment() {
         binding.transcriptionText.text = phonetic
         binding.partOfSpeechText.text = vna
         dataAdapter.setData(meanings)
+    }
+
+    fun soundButtonSet(audio : String) {
+        binding.imageButton.setOnClickListener {
+            (context as MainActivity).playAudio(audio)
+        }
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
