@@ -103,7 +103,7 @@ class DictionaryFragment : Fragment() {
                         example = spannable
                     }
                     meanings.add(MeaningCardModel(def,
-                        example.toString()))
+                        example))
                 }
 
             }
@@ -149,8 +149,6 @@ class DictionaryFragment : Fragment() {
         })
         // Test data
         var testList: ArrayList<MeaningCardModel> = ArrayList<MeaningCardModel>()
-        testList.add(MeaningCardModel("Definition", "example"))
-        testList.add(MeaningCardModel("Definition 2", "example 2"))
         dataAdapter.setData(testList)
     }
     override fun onDestroyView() {

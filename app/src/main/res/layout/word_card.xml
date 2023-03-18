@@ -3,15 +3,21 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:outlineProvider="none">
 
-    <androidx.cardview.widget.CardView
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:outlineProvider="background"
+        app:cardCornerRadius="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeColor="#BEBAB3"
+        app:strokeWidth="1dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -21,7 +27,9 @@
                 android:id="@+id/exampleText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 android:layout_marginBottom="6dp"
                 android:fontFamily="@font/rubik"
                 android:text="Lorum Ipsum Lorum IpsumLorum Ipsum Lorum Ipsum  vLorum Ipsum"
@@ -38,7 +46,9 @@
                 android:id="@+id/definitionText"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginEnd="10dp"
                 android:fontFamily="@font/rubik"
                 android:text="Lorum Ipsum Lorum IpsumLorum Ipsum Lorum Ipsum  vLorum Ipsum"
                 android:textAlignment="viewStart"
@@ -51,5 +61,5 @@
                 app:lineHeight="21dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-    </androidx.cardview.widget.CardView>
+    </com.google.android.material.card.MaterialCardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
