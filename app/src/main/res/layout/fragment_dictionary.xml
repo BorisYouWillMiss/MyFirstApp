@@ -139,6 +139,7 @@
             android:height="48sp"
             android:backgroundTint="#00FFFFFF"
             android:hint="Search"
+            android:inputType="textPhonetic"
             android:outlineProvider="none"
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>

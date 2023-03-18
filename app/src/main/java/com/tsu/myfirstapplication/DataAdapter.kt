@@ -14,6 +14,7 @@ import com.tsu.myfirstapplication.models.MeaningCardModel
 class DataAdapter constructor() : RecyclerView.Adapter<DataAdapter.DataAdapterViewHolder>() {
 
     private val adapterData = ArrayList<MeaningCardModel>()
+
     class DataAdapterViewHolder(view: View) : RecyclerView.ViewHolder(view){
         fun bindCardInfo(item : MeaningCardModel){
             itemView.findViewById<TextView>(R.id.definitionText).text = item.definition

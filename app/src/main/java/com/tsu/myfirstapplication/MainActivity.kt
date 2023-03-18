@@ -37,7 +37,6 @@ class MainActivity : AppCompatActivity() {
 
         navView.setupWithNavController(navController)
     }
-
     fun playAudio(url: String){
         mediaPlayer.setAudioStreamType(AudioManager.STREAM_MUSIC)
 
@@ -48,8 +47,8 @@ class MainActivity : AppCompatActivity() {
             mediaPlayer.start()
         } catch(e: Exception) {
             val dialogBuilder = AlertDialog.Builder(this)
-            dialogBuilder.setTitle("Can't play audio!")
-            dialogBuilder.setMessage("It seems that your connection is disabled.")
+            dialogBuilder.setTitle("Audio can't be played")
+            dialogBuilder.setMessage("Check your internet connection")
             dialogBuilder.show()
         }
     }
